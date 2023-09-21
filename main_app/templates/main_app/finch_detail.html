@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">Species: {{ object.species }}</span>
+            Habitat: {{ object.habitat }}
+            {{ object.description }}
+        </div>
+        <div class="card-action">
+            <a href="{% url 'finch_update' object.id %}">Edit</a>
+            <a href="{% url 'finch_delete' object.id %}">Delete</a>
+        </div>
+    </div>
+
+
+{% endblock %}

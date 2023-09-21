@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h2>Confirm Delete For {{ object.species }}</h2>
+    <p>Are you sure you want to delete this finch?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Delete" class="btn btn-danger">
+        <a href="{% url 'finch_detail' object.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}
